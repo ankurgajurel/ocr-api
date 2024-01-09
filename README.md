@@ -34,7 +34,7 @@ pip install -r requirements.txt
 python3 app.py
 ```
 
-### Docker 
+### Docker
 
 ```sh
 docker build -t ocr-api .
@@ -43,9 +43,49 @@ docker run -p 8000:8000 ocr-api
 
 The application should now be running at `http://localhost:8000`.
 
-## Usage
+## API Endpoints
 
-Provide usage instructions here.
+### POST /api/ocr
+
+This endpoint allows you to perform OCR on an image.
+
+## Sample Request
+
+#### Python Request
+
+You can use the `requests` library in Python to make a POST request to the API.
+
+```python
+import requests
+
+url = "https://ocr-api.ankurgajurel.com.np/ocr"
+file_path = "sample.png"
+
+with open(file_path, "rb") as file:
+    response = requests.post(url, files={"file": file})
+
+print(response.json())
+```
+
+### JavaScript Request
+
+You can use the fetch API in JavaScript to make a POST request to the API.
+
+```javascript
+const url = "https://ocr-api.ankurgajurel.com.np/ocr";
+const file = document.querySelector('input[type="file"]').files[0];
+
+const formData = new FormData();
+formData.append("file", file);
+
+fetch(url, {
+  method: "POST",
+  body: formData,
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error:", error));
+```
 
 ## Contributing
 
