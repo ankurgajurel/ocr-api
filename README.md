@@ -28,7 +28,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-2. Run the app
+Copy Environment Variables
+
+```sh
+cp .env.example .env
+```
+
+3. Run the app
 
 ```sh
 python3 app.py

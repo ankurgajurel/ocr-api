@@ -2,3 +2,5 @@ Flask
 numpy
 pillow
 pytesseract
+python-dotenv
+waitress
