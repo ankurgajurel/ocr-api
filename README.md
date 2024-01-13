@@ -37,7 +37,7 @@ cp .env.example .env
 3. Run the app
 
 ```sh
-python3 app.py
+python3 main.py
 ```
 
 ### Docker

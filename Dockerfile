@@ -7,4 +7,4 @@ RUN apt-get update && apt-get install -y \
     tesseract-ocr \
     libtesseract-dev 
 COPY . .
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]
