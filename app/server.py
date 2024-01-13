@@ -18,10 +18,10 @@ def create_app():
 app = create_app()
 
 app.config["JWT_SECRET"] = os.getenv("JWT_SECRET")
-
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
 
 def server():
     if os.getenv("APP_ENV") == "dev":
-        app.run(debug=True, port=os.getenv("PORT"), host="0.0.0.0")
+        app.run(debug=True, port=os.getenv("PORT", 8000), host="0.0.0.0")
     elif os.getenv("APP_ENV") == "prod":
-        serve(app, port=os.getenv("PORT"), host="0.0.0.0")
+        serve(app, port=os.getenv("PORT", 8000), host="0.0.0.0")

@@ -6,3 +6,5 @@ python-dotenv
 waitress
 flasgger
 pyjwt
+werkzeug
+flask_sqlalchemy
